@@ -1,0 +1,185 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "turbo",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended",
+        "plugin:react/recommended",
+        "prettier"
+    ],
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "sort-export-all",
+        "@tanstack/query",
+        "unused-imports",
+        "destructuring"
+    ],
+    "rules": {
+        "@tanstack/query/exhaustive-deps": "warn",
+        "prefer-destructuring": "error",
+        "space-before-blocks": "error",
+        "arrow-spacing": "error",
+        "arrow-body-style": [
+            "error",
+            "always"
+        ],
+        "curly": [
+            "error",
+            "all"
+        ],
+        "no-else-return": "error",
+        "no-multiple-empty-lines": "error",
+        "no-undef": "error",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": true,
+                "ignoreDeclarationSort": true
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "newlines-between": "always",
+                "groups": [
+                    "type",
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "object",
+                    "index"
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "*.scss",
+                        "group": "index",
+                        "patternOptions": {
+                            "matchBase": true,
+                            "dot": true
+                        },
+                        "position": "after"
+                    },
+                    {
+                        "pattern": "*.css",
+                        "group": "index",
+                        "patternOptions": {
+                            "matchBase": true,
+                            "dot": true
+                        },
+                        "position": "after"
+                    },
+                    {
+                        "pattern": "@/**",
+                        "group": "internal",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": [
+                    "type",
+                    "object"
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "import/first": "error",
+        "import/no-duplicates": "error",
+        "import/newline-after-import": [
+            "error",
+            {
+                "count": 1
+            }
+        ],
+        "import/namespace": "off",
+        "import/named": "off",
+        "import/no-unresolved": "off",
+        "turbo/no-undeclared-env-vars": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react/no-array-index-key": "error",
+        "react/jsx-no-constructed-context-values": "error",
+        "react/jsx-key": "error",
+        "sort-export-all/sort-export-all": "off",
+        "simple-import-sort/exports": "off",
+        "import/extensions": [
+            "error",
+            {
+                "js": "never",
+                "tsx": "never",
+                "scss": "always",
+                "svg": "always",
+                "json": "always"
+            }
+        ],
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "destructuring/in-params": "error",
+        "destructuring/in-methods-params": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error"
+    },
+    "overrides": [
+        {
+            "files": [
+                "src/**"
+            ],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "error"
+            }
+        },
+        {
+            "files": [
+                "src/**/index.{ts,js}"
+            ],
+            "rules": {
+                "sort-export-all/sort-export-all": "error"
+            }
+        }
+    ],
+    "globals": {
+        "React": true,
+        "JSX": true,
+        "t": true,
+        "NodeJS": true,
+        "ImportMetaEnv": true,
+        "IdleRequestOptions": true,
+        "IdleRequestCallback": true
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        },
+        "react": {
+            "version": "detect"
+        }
+    }
+}
